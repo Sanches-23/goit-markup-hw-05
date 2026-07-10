@@ -10,13 +10,16 @@
     align-items: center;
     pointer-events: none;
     opacity: 0;
+    visibility: hidden;
     z-index: 999;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
     pointer-events: auto;
     opacity: 1;
+    visibility: visible;
 }
 
 .modal {
@@ -38,7 +41,7 @@
 .modal-close {
     color: #2e2f42;
     background-color: #e7e9fc;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 24px;
     width: 24px;
     height: 24px;
@@ -155,7 +158,6 @@
 }
 
 .modal-form-policy {
-    line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
